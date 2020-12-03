@@ -19,7 +19,7 @@ public class DayTwo implements Day {
         List<String> input = InputUtils.stringInput(2);
 
         return input.stream()
-                .map(DayTwo::toPassword)
+                .map(Password::new)
                 .filter(Password::isValidPartOne)
                 .count();
     }
@@ -29,34 +29,31 @@ public class DayTwo implements Day {
         List<String> input = InputUtils.stringInput(2);
 
         return input.stream()
-                .map(DayTwo::toPassword)
+                .map(Password::new)
                 .filter(Password::isValidPartTwo)
                 .count();
     }
 
-    private static Password toPassword(String line) {
-        String[] parts = line.split(" ");
-
-        String[] limits = parts[0].split("-");
-        int min = Integer.parseInt(limits[0]);
-        int max = Integer.parseInt(limits[1]);
-
-        char c = parts[1].charAt(0);
-        String password = parts[2];
-
-        return new Password(min, max, c, password);
-    }
-
     private static class Password {
+
         int min;
         int max;
         char match;
         String password;
 
-        Password(int min, int max, char match, String password) {
+        Password(String line) {
+            String[] parts = line.split(" ");
+
+            String[] limits = parts[0].split("-");
+            int min = Integer.parseInt(limits[0]);
+            int max = Integer.parseInt(limits[1]);
+
+            char c = parts[1].charAt(0);
+            String password = parts[2];
+
             this.min = min;
             this.max = max;
-            this.match = match;
+            this.match = c;
             this.password = password;
         }
 
