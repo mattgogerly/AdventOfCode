@@ -22,7 +22,7 @@ public class DayThree implements Day {
     public Object partTwo() {
         char[][] input = InputUtils.gridInput(3);
 
-        return numTrees(input, 1, 1) * numTrees(input,3, 1) * numTrees(input, 5, 1)
+        return numTrees(input, 1, 1) * numTrees(input, 3, 1) * numTrees(input, 5, 1)
                 * numTrees(input, 7, 1) * numTrees(input, 1, 2);
     }
 
