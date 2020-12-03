@@ -62,6 +62,6 @@ public class DayOne implements Day {
             }
         }
 
-        throw new IllegalArgumentException("No trio of inputs sum to 2020!");
+        throw new IllegalArgumentException("No trio of inputs sum to 2020");
     }
 }

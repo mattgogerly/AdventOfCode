@@ -19,6 +19,12 @@ public class InputUtils {
                 .collect(Collectors.toList());
     }
 
+    public static char[][] gridInput(int day) {
+        return readInputAsString(day).stream()
+                .map(String::toCharArray)
+                .toArray(char[][]::new);
+    }
+
     private static List<String> readInputAsString(int day) {
         String file = String.format("resources/day%d.txt", day);
 

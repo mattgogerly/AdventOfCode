@@ -7,7 +7,7 @@ import java.util.List;
 public class DayTwo implements Day {
 
     public static void main(String[] args) {
-        new DayOne().printAnswers();
+        new DayTwo().printAnswers();
     }
 
     public DayTwo() {
