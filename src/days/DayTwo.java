@@ -2,8 +2,6 @@ package days;
 
 import utils.InputUtils;
 
-import java.util.List;
-
 public class DayTwo implements Day {
 
     public static void main(String[] args) {
@@ -16,9 +14,7 @@ public class DayTwo implements Day {
 
     @Override
     public Object partOne() {
-        List<String> input = InputUtils.stringInput(2);
-
-        return input.stream()
+        return InputUtils.asStringStream(2)
                 .map(Password::new)
                 .filter(Password::isValidPartOne)
                 .count();
@@ -26,9 +22,7 @@ public class DayTwo implements Day {
 
     @Override
     public Object partTwo() {
-        List<String> input = InputUtils.stringInput(2);
-
-        return input.stream()
+        return InputUtils.asStringStream(2)
                 .map(Password::new)
                 .filter(Password::isValidPartTwo)
                 .count();

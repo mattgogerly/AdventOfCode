@@ -1,45 +1,41 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class InputUtils {
 
-    public static List<String> stringInput(int day) {
-        return readInputAsString(day);
+    public static String asString(int day) {
+        return readInput(day);
     }
 
-    public static List<Integer> numberInput(int day) {
-        return readInputAsString(day).stream()
-                .map(Integer::parseInt)
-                .collect(Collectors.toList());
+    public static Stream<String> asStringStream(int day) {
+        return stringStream(day);
     }
 
-    public static char[][] gridInput(int day) {
-        return readInputAsString(day).stream()
+    public static Stream<Integer> asIntegerStream(int day) {
+        return stringStream(day)
+                .map(Integer::parseInt);
+    }
+
+    public static char[][] asGrid(int day) {
+        return stringStream(day)
                 .map(String::toCharArray)
                 .toArray(char[][]::new);
     }
 
-    private static List<String> readInputAsString(int day) {
+    private static Stream<String> stringStream(int day) {
+        return Arrays.stream(readInput(day).split("\n"));
+    }
+
+    private static String readInput(int day) {
         String file = String.format("resources/day%d.txt", day);
 
         try {
-            List<String> input = new ArrayList<>();
-
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            String line = reader.readLine();
-            while (line != null) {
-                input.add(line);
-                line = reader.readLine();
-            }
-
-            reader.close();
-            return input;
+            return Files.readString(Paths.get(file));
         } catch (IOException e) {
             System.err.println("Failed to read input file" + e);
         }

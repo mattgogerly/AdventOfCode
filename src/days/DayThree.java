@@ -1,6 +1,6 @@
 package days;
 
-import utils.InputUtils;
+import static utils.InputUtils.asGrid;
 
 public class DayThree implements Day {
 
@@ -14,13 +14,14 @@ public class DayThree implements Day {
 
     @Override
     public Object partOne() {
-        char[][] input = InputUtils.gridInput(3);
+        char[][] input = asGrid(3);
+
         return numTrees(input, 3, 1);
     }
 
     @Override
     public Object partTwo() {
-        char[][] input = InputUtils.gridInput(3);
+        char[][] input = asGrid(3);
 
         return numTrees(input, 1, 1) * numTrees(input, 3, 1) * numTrees(input, 5, 1)
                 * numTrees(input, 7, 1) * numTrees(input, 1, 2);
