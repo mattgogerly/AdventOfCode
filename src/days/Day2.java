@@ -1,20 +1,20 @@
 package days;
 
-import utils.InputUtils;
+import static utils.InputUtils.asStringStream;
 
-public class DayTwo implements Day {
+public class Day2 implements Day {
 
     public static void main(String[] args) {
-        new DayTwo().printAnswers();
+        new Day2().printAnswers();
     }
 
-    public DayTwo() {
+    public Day2() {
 
     }
 
     @Override
     public Object partOne() {
-        return InputUtils.asStringStream(2)
+        return asStringStream(2)
                 .map(Password::new)
                 .filter(Password::isValidPartOne)
                 .count();
@@ -22,7 +22,7 @@ public class DayTwo implements Day {
 
     @Override
     public Object partTwo() {
-        return InputUtils.asStringStream(2)
+        return asStringStream(2)
                 .map(Password::new)
                 .filter(Password::isValidPartTwo)
                 .count();

@@ -8,13 +8,13 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asIntegerStream;
 
-public class DayOne implements Day {
+public class Day1 implements Day {
 
     public static void main(String[] args) {
-        new DayOne().printAnswers();
+        new Day1().printAnswers();
     }
 
-    public DayOne() {
+    public Day1() {
 
     }
 
