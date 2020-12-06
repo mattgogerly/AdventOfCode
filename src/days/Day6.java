@@ -1,6 +1,7 @@
 package days;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static utils.InputUtils.asString;
@@ -19,10 +20,8 @@ public class Day6 implements Day {
     public Object partOne() {
         return formStream()
                 .map(s -> s.replaceAll("\n", ""))
-                .map(s -> s.split(""))
-                .map(Day6::partOneSize)
-                .reduce(0, Integer::sum);
-
+                .mapToLong(s -> s.chars().distinct().count())
+                .sum();
     }
 
     @Override
@@ -30,8 +29,8 @@ public class Day6 implements Day {
         return formStream()
                 .map(s -> s.replaceAll("\n", " "))
                 .map(s -> s.split(" "))
-                .map(Day6::partTwoSize)
-                .reduce(0L, Long::sum);
+                .mapToInt(Day6::partTwoSize)
+                .sum();
     }
 
     private Stream<String> formStream() {
@@ -39,22 +38,16 @@ public class Day6 implements Day {
         return Arrays.stream(input);
     }
 
-    private static int partOneSize(String[] form) {
-        Set<String> entries = new HashSet<>(Arrays.asList(form));
-        return entries.size();
-    }
+    private static int partTwoSize(String[] forms) {
+        String firstEntry = forms[0];
+        Set<Integer> chars = firstEntry.chars()
+                .boxed()
+                .collect(Collectors.toSet());
 
-    private static long partTwoSize(String[] forms) {
-        Map<Character, Integer> occurrences = new HashMap<>();
-        for (String entry : forms) {
-            for (Character c : entry.toCharArray()) {
-                occurrences.merge(c, 1, Integer::sum);
-            }
+        for (String form : forms) {
+            chars.retainAll(form.chars().boxed().collect(Collectors.toSet()));
         }
 
-        int size = forms.length;
-        return occurrences.values().stream()
-                .filter(s -> s == size)
-                .count();
+        return chars.size();
     }
 }
