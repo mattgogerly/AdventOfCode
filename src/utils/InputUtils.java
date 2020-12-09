@@ -21,6 +21,11 @@ public class InputUtils {
                 .map(Integer::parseInt);
     }
 
+    public static Stream<Long> asLongStream(int day) {
+        return stringStream(day)
+                .map(Long::parseLong);
+    }
+
     public static char[][] asGrid(int day) {
         return stringStream(day)
                 .map(String::toCharArray)
