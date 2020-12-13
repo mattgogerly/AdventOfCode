@@ -25,7 +25,10 @@ public class Day13 implements Day {
 
             int busId = Integer.parseInt(bus);
 
+            // modulo gives time between our start time and the departure before it, so the time we have to wait
+            // is the interval of that bus minus how long it's already been going before our start time
             int diff = busId - time % busId;
+
             if (diff < minDiff) {
                 minDiff = diff;
                 bestBus = busId;
