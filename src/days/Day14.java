@@ -92,31 +92,43 @@ public class Day14 implements Day {
 
             String binary = padLeft(convertToBinary(address), 36);
 
+            // apply the mask but leave Xs in place
             String result = IntStream.range(0, mask.length())
                     .map(i -> mask.charAt(i) == 'X' ? 'X' : mask.charAt(i) == '0' ? binary.charAt(i) : mask.charAt(i))
                     .mapToObj(c -> (char) c)
                     .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                     .toString();
 
+            // count floating bits
             long floatCount = result.chars()
                     .filter(c -> c == 'X')
                     .count();
 
+            // determine number of combinations
             int combinations = (int) Math.pow(2, floatCount);
-            for (int i = 0; i < combinations; i++) {
-                String[] combs = padLeft(convertToBinary(i), (int) floatCount).split("");
-                List<String> comb = new ArrayList<>(Arrays.asList(combs));
 
+            for (int i = 0; i < combinations; i++) {
+                // converting i to binary gives us every combination of values to substitute into the Xs
+                // e.g. with 2 Xs (i.e. 4 combinations)
+                // 0 -> 0000
+                // 1 -> 0001
+                // 2 -> 0010
+                // 3 -> 0011
+                String[] co = padLeft(convertToBinary(i), (int) floatCount).split("");
+                List<String> combination = new ArrayList<>(Arrays.asList(co));
+
+                // build the new address, replacing each X with the first value from our combination list
                 StringBuilder resultCopy = new StringBuilder();
                 for (int j = 0; j < result.length(); j++) {
                     char c = result.charAt(j);
                     if (c == 'X') {
-                        resultCopy.append(comb.remove(0));
+                        resultCopy.append(combination.remove(0));
                     } else {
                         resultCopy.append(c);
                     }
                 }
 
+                // convert it from binary to a long and add it to memory
                 Long newAddress = Long.parseLong(resultCopy.toString(), 2);
                 memory.put(newAddress, value);
             }
