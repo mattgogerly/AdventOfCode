@@ -86,6 +86,7 @@ class Day14 extends Day {
             long value = Long.parseLong(v);
 
             value = value | Long.parseLong(mask.replaceAll("X", "0"), 2);
+            value = value & Long.parseLong(mask.replaceAll("X", "1"), 2);
 
             memory.put(address, value);
         }
