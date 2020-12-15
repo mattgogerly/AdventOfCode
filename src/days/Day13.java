@@ -71,6 +71,9 @@ class Day13 extends Day {
     }
 
 
+    /**
+     * Adapted from https://rosettacode.org/wiki/Chinese_remainder_theorem#Java
+     */
     private static class ChineseRemainderTheorem {
 
         public static long chineseRemainder(List<Long> n, List<Long> a) {
