@@ -8,7 +8,7 @@ import static utils.InputUtils.asString;
 class Day15 extends Day {
 
     public static void main(String[] args) {
-        new days.Day15().printAnswers();
+        new Day15().printAnswers();
     }
 
     Day15() {
