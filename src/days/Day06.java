@@ -6,13 +6,13 @@ import java.util.stream.Stream;
 
 import static utils.InputUtils.asString;
 
-public class Day6 implements Day {
+public class Day06 implements Day {
 
     public static void main(String[] args) {
-        new Day6().printAnswers();
+        new Day06().printAnswers();
     }
 
-    public Day6() {
+    public Day06() {
 
     }
 
@@ -29,7 +29,7 @@ public class Day6 implements Day {
         return formStream()
                 .map(s -> s.replaceAll("\n", " "))
                 .map(s -> s.split(" "))
-                .mapToInt(Day6::partTwoSize)
+                .mapToInt(Day06::partTwoSize)
                 .sum();
     }
 

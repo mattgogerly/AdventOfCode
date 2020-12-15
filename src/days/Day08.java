@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day8 implements Day {
+public class Day08 implements Day {
 
     public static void main(String[] args) {
-        new Day8().printAnswers();
+        new Day08().printAnswers();
     }
 
     @Override

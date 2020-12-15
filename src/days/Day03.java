@@ -2,13 +2,13 @@ package days;
 
 import static utils.InputUtils.asGrid;
 
-public class Day3 implements Day {
+public class Day03 implements Day {
 
     public static void main(String[] args) {
-        new Day3().printAnswers();
+        new Day03().printAnswers();
     }
 
-    public Day3() {
+    public Day03() {
 
     }
 

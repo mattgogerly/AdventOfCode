@@ -2,13 +2,13 @@ package days;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day2 implements Day {
+public class Day02 implements Day {
 
     public static void main(String[] args) {
-        new Day2().printAnswers();
+        new Day02().printAnswers();
     }
 
-    public Day2() {
+    public Day02() {
 
     }
 

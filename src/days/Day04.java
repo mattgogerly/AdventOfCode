@@ -7,10 +7,10 @@ import java.util.stream.Stream;
 
 import static utils.InputUtils.asString;
 
-public class Day4 implements Day {
+public class Day04 implements Day {
 
     public static void main(String[] args) {
-        new Day4().printAnswers();
+        new Day04().printAnswers();
     }
 
     private static final Map<String, String> requiredFields = Map.of(
@@ -23,7 +23,7 @@ public class Day4 implements Day {
             "pid", "^[0-9]{9}$"
     );
 
-    public Day4() {
+    public Day04() {
 
     }
 

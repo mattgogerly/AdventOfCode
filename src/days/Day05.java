@@ -5,20 +5,20 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day5 implements Day {
+public class Day05 implements Day {
 
     public static void main(String[] args) {
-        new Day5().printAnswers();
+        new Day05().printAnswers();
     }
 
-    public Day5() {
+    public Day05() {
 
     }
 
     @Override
     public Object partOne() {
         return asStringStream(5)
-                .map(Day5::calculateId)
+                .map(Day05::calculateId)
                 .max(Integer::compareTo)
                 .orElseThrow(() -> new IllegalArgumentException("No max seat ID"));
     }
@@ -26,7 +26,7 @@ public class Day5 implements Day {
     @Override
     public Object partTwo() {
         List<Integer> ids = asStringStream(5)
-                .map(Day5::calculateId)
+                .map(Day05::calculateId)
                 .sorted()
                 .collect(Collectors.toList());
 

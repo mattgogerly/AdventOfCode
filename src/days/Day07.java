@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day7 implements Day {
+public class Day07 implements Day {
 
     public static void main(String[] args) {
-        new Day7().printAnswers();
+        new Day07().printAnswers();
     }
 
     private static final Pattern parentPattern = Pattern.compile("(.+) bags contain (.+)\\.");
@@ -17,7 +17,7 @@ public class Day7 implements Day {
 
     private static Map<String, Node> tree = buildTree();
 
-    public Day7() {
+    public Day07() {
 
     }
 
