@@ -30,19 +30,22 @@ class Day15 extends Day {
                 .map(Long::parseLong)
                 .collect(Collectors.toList());
 
+        // store number to the turn on which it was spoken
         Map<Long, Long> store = new HashMap<>();
 
         // add all but the last input
-        for (int i = 0; i < input.size() - 1; i++) {
-            store.put(input.get(i), (long) i);
+        // using i = 1, i-1 to reduce confusion on turn number vs array index
+        for (int i = 1; i < input.size(); i++) {
+            store.put(input.get(i - 1), (long) i);
         }
 
         // start with the last number in the input
         long lastNumber = input.get(input.size() - 1);
 
-        // confusing because arrays are 0 indexed, but first turn is the index of the last number in the input
-        // and the last turn is the limit - 1
-        for (long turn = input.size() - 1; turn < limit - 1; turn++) {
+        // turn starts at the last element of the input (the first number we need to consider)
+        // note "turn < limit" since we set the lastNumber for the next iteration at the end of each iteration, so
+        // the number spoken on the "limit" turn is the value of lastNumber at the end of the iteration before it
+        for (long turn = input.size(); turn < limit; turn++) {
             long nextLastNumber = store.containsKey(lastNumber) ? turn - store.get(lastNumber) : 0;
             store.put(lastNumber, turn);
             lastNumber = nextLastNumber;
