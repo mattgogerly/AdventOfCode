@@ -8,15 +8,19 @@ import java.util.stream.IntStream;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day14 implements Day {
+class Day14 extends Day {
 
     public static void main(String[] args) {
         new Day14().printAnswers();
     }
 
+    Day14() {
+        super(14);
+    }
+
     @Override
     public Object partOne() {
-        List<String> input = asStringStream(14).collect(Collectors.toList());
+        List<String> input = asStringStream(DAY).collect(Collectors.toList());
 
         NavigationComputer navigationComputer = new NavigationComputer();
         for (String l : input) {
@@ -30,7 +34,7 @@ public class Day14 implements Day {
 
     @Override
     public Object partTwo() {
-        List<String> input = asStringStream(14).collect(Collectors.toList());
+        List<String> input = asStringStream(DAY).collect(Collectors.toList());
 
         NavigationComputer navigationComputer = new NavigationComputer();
         for (String l : input) {

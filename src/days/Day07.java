@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day07 implements Day {
+class Day07 extends Day {
 
     public static void main(String[] args) {
         new Day07().printAnswers();
@@ -17,8 +17,8 @@ public class Day07 implements Day {
 
     private static Map<String, Node> tree = buildTree();
 
-    public Day07() {
-
+    Day07() {
+        super(7);
     }
 
     @Override
@@ -62,7 +62,7 @@ public class Day07 implements Day {
     private static Map<String, Node> buildTree() {
         tree = new HashMap<>();
 
-        asStringStream(7).forEach(l -> {
+        asStringStream(DAY).forEach(l -> {
             Matcher parentMatches = parentPattern.matcher(l);
             if (!parentMatches.matches()) {
                 throw new IllegalArgumentException("Parent input does not match required format");

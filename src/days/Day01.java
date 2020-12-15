@@ -8,19 +8,19 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asIntegerStream;
 
-public class Day01 implements Day {
+class Day01 extends Day {
 
     public static void main(String[] args) {
         new Day01().printAnswers();
     }
 
-    public Day01() {
-
+    Day01() {
+        super(1);
     }
 
     @Override
     public Object partOne() {
-        List<Integer> input = asIntegerStream(1).collect(Collectors.toList());
+        List<Integer> input = asIntegerStream(DAY).collect(Collectors.toList());
 
         Map<Integer, Integer> complements = new HashMap<>();
         for (int i = 0; i < input.size(); i++) {
@@ -39,7 +39,7 @@ public class Day01 implements Day {
 
     @Override
     public Object partTwo() {
-        List<Integer> input = asIntegerStream(1)
+        List<Integer> input = asIntegerStream(DAY)
                 .sorted()
                 .collect(Collectors.toList());
 

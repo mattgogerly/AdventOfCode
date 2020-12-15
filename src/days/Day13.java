@@ -5,15 +5,19 @@ import java.util.List;
 
 import static utils.InputUtils.asString;
 
-public class Day13 implements Day {
+class Day13 extends Day {
 
     public static void main(String[] args) {
         new Day13().printAnswers();
     }
 
+    Day13() {
+        super(13);
+    }
+
     @Override
     public Object partOne() {
-        String[] input = asString(13).split("\n");
+        String[] input = asString(DAY).split("\n");
 
         int time = Integer.parseInt(input[0]);
         String timetable = input[1];
@@ -43,7 +47,7 @@ public class Day13 implements Day {
 
     @Override
     public Object partTwo() {
-        String[] input = asString(13).split("\n");
+        String[] input = asString(DAY).split("\n");
         String timetable = input[1];
 
         String[] buses = timetable.split(",");

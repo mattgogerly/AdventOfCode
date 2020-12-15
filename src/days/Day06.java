@@ -6,14 +6,14 @@ import java.util.stream.Stream;
 
 import static utils.InputUtils.asString;
 
-public class Day06 implements Day {
+class Day06 extends Day {
 
     public static void main(String[] args) {
         new Day06().printAnswers();
     }
 
-    public Day06() {
-
+    Day06() {
+        super(6);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Day06 implements Day {
     }
 
     private Stream<String> formStream() {
-        String[] input = asString(6).split("\n\n");
+        String[] input = asString(DAY).split("\n\n");
         return Arrays.stream(input);
     }
 

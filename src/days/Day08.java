@@ -7,10 +7,14 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day08 implements Day {
+class Day08 extends Day {
 
     public static void main(String[] args) {
         new Day08().printAnswers();
+    }
+
+    Day08() {
+        super(8);
     }
 
     @Override
@@ -41,7 +45,7 @@ public class Day08 implements Day {
     }
 
     private static List<Command> getCommands() {
-        return asStringStream(8)
+        return asStringStream(DAY)
                 .map(s -> s.split(" "))
                 .map(a -> new Command(a[0], a[1]))
                 .collect(Collectors.toList());

@@ -5,15 +5,19 @@ import java.util.Map;
 
 import static utils.InputUtils.asGrid;
 
-public class Day11 implements Day {
+class Day11 extends Day {
 
     public static void main(String[] args) {
         new Day11().printAnswers();
     }
 
+    Day11() {
+        super(11);
+    }
+
     @Override
     public Object partOne() {
-        char[][] grid = asGrid(11);
+        char[][] grid = asGrid(DAY);
 
         Map<Coordinate, Character> changes = new HashMap<>();
         do {

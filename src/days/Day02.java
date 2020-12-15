@@ -2,19 +2,19 @@ package days;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day02 implements Day {
+class Day02 extends Day {
 
     public static void main(String[] args) {
         new Day02().printAnswers();
     }
 
-    public Day02() {
-
+    Day02() {
+        super(2);
     }
 
     @Override
     public Object partOne() {
-        return asStringStream(2)
+        return asStringStream(DAY)
                 .map(Password::new)
                 .filter(Password::isValidPartOne)
                 .count();
@@ -22,7 +22,7 @@ public class Day02 implements Day {
 
     @Override
     public Object partTwo() {
-        return asStringStream(2)
+        return asStringStream(DAY)
                 .map(Password::new)
                 .filter(Password::isValidPartTwo)
                 .count();

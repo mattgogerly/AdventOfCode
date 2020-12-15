@@ -1,13 +1,19 @@
 package days;
 
-public interface Day {
+public abstract class Day {
 
-    default void printAnswers() {
+    protected static int DAY;
+
+    Day(int dayNumber) {
+        DAY = dayNumber;
+    }
+
+    void printAnswers() {
         System.out.println("Part 1: " + partOne());
         System.out.println("Part 2: " + partTwo());
     }
 
-    Object partOne();
+    abstract Object partOne();
 
-    Object partTwo();
+    abstract Object partTwo();
 }

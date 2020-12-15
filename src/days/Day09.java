@@ -5,10 +5,14 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asLongStream;
 
-public class Day09 implements Day {
+class Day09 extends Day {
 
     public static void main(String[] args) {
         new Day09().printAnswers();
+    }
+
+    Day09() {
+        super(9);
     }
 
     @Override

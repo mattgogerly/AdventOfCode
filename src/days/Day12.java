@@ -7,15 +7,19 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asStringStream;
 
-public class Day12 implements Day {
+class Day12 extends Day {
 
     public static void main(String[] args) {
         new Day12().printAnswers();
     }
 
+    Day12() {
+        super(12);
+    }
+
     @Override
     public Object partOne() {
-        List<Instruction> input = asStringStream(12)
+        List<Instruction> input = asStringStream(DAY)
                 .map(Instruction::new)
                 .collect(Collectors.toList());
 

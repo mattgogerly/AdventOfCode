@@ -5,15 +5,19 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asIntegerStream;
 
-public class Day10 implements Day {
+class Day10 extends Day {
 
     public static void main(String[] args) {
         new Day10().printAnswers();
     }
 
+    Day10() {
+        super(10);
+    }
+
     @Override
     public Object partOne() {
-        List<Integer> input = asIntegerStream(10)
+        List<Integer> input = asIntegerStream(DAY)
                 .sorted()
                 .collect(Collectors.toList());
 
@@ -40,7 +44,7 @@ public class Day10 implements Day {
 
     @Override
     public Object partTwo() {
-        List<Integer> input = asIntegerStream(10)
+        List<Integer> input = asIntegerStream(DAY)
                 .sorted()
                 .collect(Collectors.toList());
 

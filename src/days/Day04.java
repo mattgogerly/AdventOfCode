@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 import static utils.InputUtils.asString;
 
-public class Day04 implements Day {
+class Day04 extends Day {
 
     public static void main(String[] args) {
         new Day04().printAnswers();
@@ -23,8 +23,8 @@ public class Day04 implements Day {
             "pid", "^[0-9]{9}$"
     );
 
-    public Day04() {
-
+    Day04() {
+        super(4);
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Day04 implements Day {
 
     private Stream<Passport> passportStream() {
         // each entry is separated by a double newline
-        String[] input = asString(4).split("\n\n");
+        String[] input = asString(DAY).split("\n\n");
 
         // map each String (line) to a Passport
         return Arrays.stream(input).map(Passport::new);

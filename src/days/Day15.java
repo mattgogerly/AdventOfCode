@@ -5,10 +5,14 @@ import java.util.stream.Collectors;
 
 import static utils.InputUtils.asString;
 
-public class Day15 implements Day {
+class Day15 extends Day {
 
     public static void main(String[] args) {
         new days.Day15().printAnswers();
+    }
+
+    Day15() {
+        super(15);
     }
 
     @Override
@@ -22,7 +26,7 @@ public class Day15 implements Day {
     }
 
     private long determineLastNumber(long limit) {
-        List<Long> input = Arrays.stream(asString(15).split(","))
+        List<Long> input = Arrays.stream(asString(DAY).split(","))
                 .map(Long::parseLong)
                 .collect(Collectors.toList());
 

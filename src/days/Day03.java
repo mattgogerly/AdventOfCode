@@ -2,26 +2,26 @@ package days;
 
 import static utils.InputUtils.asGrid;
 
-public class Day03 implements Day {
+class Day03 extends Day {
 
     public static void main(String[] args) {
         new Day03().printAnswers();
     }
 
-    public Day03() {
-
+    Day03() {
+        super(3);
     }
 
     @Override
     public Object partOne() {
-        char[][] input = asGrid(3);
+        char[][] input = asGrid(DAY);
 
         return numTrees(input, 3, 1);
     }
 
     @Override
     public Object partTwo() {
-        char[][] input = asGrid(3);
+        char[][] input = asGrid(DAY);
 
         return numTrees(input, 1, 1) * numTrees(input, 3, 1) * numTrees(input, 5, 1)
                 * numTrees(input, 7, 1) * numTrees(input, 1, 2);
