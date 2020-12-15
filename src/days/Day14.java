@@ -109,11 +109,12 @@ public class Day14 implements Day {
 
             for (int i = 0; i < combinations; i++) {
                 // converting i to binary gives us every combination of values to substitute into the Xs
+                // since our substitution values are only 0s and 1s
                 // e.g. with 2 Xs (i.e. 4 combinations)
-                // 0 -> 0000
-                // 1 -> 0001
-                // 2 -> 0010
-                // 3 -> 0011
+                // 0 -> 00
+                // 1 -> 01
+                // 2 -> 10
+                // 3 -> 11
                 String[] co = padLeft(convertToBinary(i), (int) floatCount).split("");
                 List<String> combination = new ArrayList<>(Arrays.asList(co));
 
