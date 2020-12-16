@@ -26,7 +26,7 @@ public class Day16 extends Day {
                 .map(Rule::new)
                 .collect(Collectors.toList());
 
-        this.myTicket = new Ticket(input[1].split("\n")[1]);
+        this.myTicket = new Ticket(input[1].replace("your ticket:\n", ""));
 
         String[] nearby = input[2].replace("nearby tickets:\n", "").split("\n");
         this.nearbyTickets = Arrays.stream(nearby)
