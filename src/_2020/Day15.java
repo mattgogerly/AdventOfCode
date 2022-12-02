@@ -1,7 +1,6 @@
 package _2020;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static utils.InputUtils.asString;
 
@@ -28,7 +27,7 @@ class Day15 extends Day {
     private long determineLastNumber(long limit) {
         List<Long> input = Arrays.stream(asString(YEAR, DAY).split(","))
                 .map(Long::parseLong)
-                .collect(Collectors.toList());
+                .toList();
 
         // store number to the turn on which it was spoken
         Map<Long, Long> store = new HashMap<>();

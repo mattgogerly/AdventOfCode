@@ -3,7 +3,6 @@ package _2020;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static utils.InputUtils.asIntegerStream;
 
@@ -19,7 +18,7 @@ class Day01 extends Day {
 
     @Override
     public Object partOne() {
-        List<Integer> input = asIntegerStream(YEAR, DAY).collect(Collectors.toList());
+        List<Integer> input = asIntegerStream(YEAR, DAY).toList();
 
         Map<Integer, Integer> complements = new HashMap<>();
         for (int i = 0; i < input.size(); i++) {
@@ -40,7 +39,7 @@ class Day01 extends Day {
     public Object partTwo() {
         List<Integer> input = asIntegerStream(YEAR, DAY)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
 
         for (int i = 0; i < input.size() - 2; i++) {
             int first = input.get(i);

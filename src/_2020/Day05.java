@@ -1,7 +1,6 @@
 package _2020;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static utils.InputUtils.asStringStream;
 
@@ -28,7 +27,7 @@ class Day05 extends Day {
         List<Integer> ids = asStringStream(YEAR, DAY)
                 .map(Day05::calculateId)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
 
         for (int i = 0; i < ids.size(); i++) {
             int next = ids.get(i) + 1;

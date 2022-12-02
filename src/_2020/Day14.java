@@ -3,7 +3,6 @@ package _2020;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static utils.InputUtils.asStringStream;
@@ -20,7 +19,7 @@ class Day14 extends Day {
 
     @Override
     public Object partOne() {
-        List<String> input = asStringStream(YEAR, DAY).collect(Collectors.toList());
+        List<String> input = asStringStream(YEAR, DAY).toList();
 
         NavigationComputer navigationComputer = new NavigationComputer();
         for (String l : input) {
@@ -34,7 +33,7 @@ class Day14 extends Day {
 
     @Override
     public Object partTwo() {
-        List<String> input = asStringStream(YEAR, DAY).collect(Collectors.toList());
+        List<String> input = asStringStream(YEAR, DAY).toList();
 
         NavigationComputer navigationComputer = new NavigationComputer();
         for (String l : input) {

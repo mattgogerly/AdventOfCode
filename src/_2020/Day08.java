@@ -108,14 +108,5 @@ class Day08 extends Day {
         }
     }
 
-    private static class Command {
-
-        private final String op;
-        private final String param;
-
-        Command(String op, String param) {
-            this.op = op;
-            this.param = param;
-        }
-    }
+    private record Command(String op, String param) {}
 }

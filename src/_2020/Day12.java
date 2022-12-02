@@ -3,7 +3,6 @@ package _2020;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static utils.InputUtils.asStringStream;
 
@@ -21,7 +20,7 @@ class Day12 extends Day {
     public Object partOne() {
         List<Instruction> input = asStringStream(YEAR, DAY)
                 .map(Instruction::new)
-                .collect(Collectors.toList());
+                .toList();
 
         Ferry ferry = new Ferry();
         for (Instruction i : input) {
@@ -52,25 +51,12 @@ class Day12 extends Day {
 
         void move(Instruction i) {
             switch (i.direction) {
-                case L:
-                case R:
-                    rotate(i);
-                    break;
-                case N:
-                    this.y += i.step;
-                    break;
-                case S:
-                    this.y -= i.step;
-                    break;
-                case E:
-                    this.x += i.step;
-                    break;
-                case W:
-                    this.x -= i.step;
-                    break;
-                case F:
-                    move(new Instruction(facing, i.step));
-                    break;
+                case L, R -> rotate(i);
+                case N -> this.y += i.step;
+                case S -> this.y -= i.step;
+                case E -> this.x += i.step;
+                case W -> this.x -= i.step;
+                case F -> move(new Instruction(facing, i.step));
             }
         }
 

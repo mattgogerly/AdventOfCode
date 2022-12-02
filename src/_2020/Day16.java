@@ -53,7 +53,7 @@ public class Day16 extends Day {
                                 .anyMatch(r -> r.isValid(v))
                         )
                 )
-                .collect(Collectors.toList());
+                .toList();
 
         Map<Integer, List<Rule>> mappings = new HashMap<>();
         for (Rule rule : rules) {
