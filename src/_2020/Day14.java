@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -20,7 +20,7 @@ class Day14 extends Day {
 
     @Override
     public Object partOne() {
-        List<String> input = asStringStream(DAY).collect(Collectors.toList());
+        List<String> input = asStringStream(YEAR, DAY).collect(Collectors.toList());
 
         NavigationComputer navigationComputer = new NavigationComputer();
         for (String l : input) {
@@ -34,7 +34,7 @@ class Day14 extends Day {
 
     @Override
     public Object partTwo() {
-        List<String> input = asStringStream(DAY).collect(Collectors.toList());
+        List<String> input = asStringStream(YEAR, DAY).collect(Collectors.toList());
 
         NavigationComputer navigationComputer = new NavigationComputer();
         for (String l : input) {

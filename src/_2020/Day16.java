@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -20,7 +20,7 @@ public class Day16 extends Day {
     Day16() {
         super(16);
 
-        String[] input = asString(DAY).split("\n\n");
+        String[] input = asString(YEAR, DAY).split("\n\n");
 
         this.rules = Arrays.stream(input[0].split("\n"))
                 .map(Rule::new)

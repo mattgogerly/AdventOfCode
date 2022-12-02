@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import static utils.InputUtils.asGrid;
 
@@ -14,14 +14,14 @@ class Day03 extends Day {
 
     @Override
     public Object partOne() {
-        char[][] input = asGrid(DAY);
+        char[][] input = asGrid(YEAR, DAY);
 
         return numTrees(input, 3, 1);
     }
 
     @Override
     public Object partTwo() {
-        char[][] input = asGrid(DAY);
+        char[][] input = asGrid(YEAR, DAY);
 
         return numTrees(input, 1, 1) * numTrees(input, 3, 1) * numTrees(input, 5, 1)
                 * numTrees(input, 7, 1) * numTrees(input, 1, 2);

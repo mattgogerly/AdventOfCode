@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ class Day05 extends Day {
 
     @Override
     public Object partOne() {
-        return asStringStream(DAY)
+        return asStringStream(YEAR, DAY)
                 .map(Day05::calculateId)
                 .max(Integer::compareTo)
                 .orElseThrow(() -> new IllegalArgumentException("No max seat ID"));
@@ -25,7 +25,7 @@ class Day05 extends Day {
 
     @Override
     public Object partTwo() {
-        List<Integer> ids = asStringStream(DAY)
+        List<Integer> ids = asStringStream(YEAR, DAY)
                 .map(Day05::calculateId)
                 .sorted()
                 .collect(Collectors.toList());

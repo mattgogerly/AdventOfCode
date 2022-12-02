@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ class Day13 extends Day {
 
     @Override
     public Object partOne() {
-        String[] input = asString(DAY).split("\n");
+        String[] input = asString(YEAR, DAY).split("\n");
 
         int time = Integer.parseInt(input[0]);
         String timetable = input[1];
@@ -47,7 +47,7 @@ class Day13 extends Day {
 
     @Override
     public Object partTwo() {
-        String[] input = asString(DAY).split("\n");
+        String[] input = asString(YEAR, DAY).split("\n");
         String timetable = input[1];
 
         String[] buses = timetable.split(",");

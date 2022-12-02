@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import static utils.InputUtils.asStringStream;
 
@@ -14,7 +14,7 @@ class Day02 extends Day {
 
     @Override
     public Object partOne() {
-        return asStringStream(DAY)
+        return asStringStream(YEAR, DAY)
                 .map(Password::new)
                 .filter(Password::isValidPartOne)
                 .count();
@@ -22,7 +22,7 @@ class Day02 extends Day {
 
     @Override
     public Object partTwo() {
-        return asStringStream(DAY)
+        return asStringStream(YEAR, DAY)
                 .map(Password::new)
                 .filter(Password::isValidPartTwo)
                 .count();

@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.HashSet;
 import java.util.List;
@@ -45,7 +45,7 @@ class Day08 extends Day {
     }
 
     private static List<Command> getCommands() {
-        return asStringStream(DAY)
+        return asStringStream(YEAR, DAY)
                 .map(s -> s.split(" "))
                 .map(a -> new Command(a[0], a[1]))
                 .collect(Collectors.toList());

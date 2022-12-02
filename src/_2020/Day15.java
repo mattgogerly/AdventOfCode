@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -26,7 +26,7 @@ class Day15 extends Day {
     }
 
     private long determineLastNumber(long limit) {
-        List<Long> input = Arrays.stream(asString(DAY).split(","))
+        List<Long> input = Arrays.stream(asString(YEAR, DAY).split(","))
                 .map(Long::parseLong)
                 .collect(Collectors.toList());
 

@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +17,7 @@ class Day11 extends Day {
 
     @Override
     public Object partOne() {
-        char[][] grid = asGrid(DAY);
+        char[][] grid = asGrid(YEAR, DAY);
 
         Map<Coordinate, Character> changes = new HashMap<>();
         do {

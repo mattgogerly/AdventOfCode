@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -34,7 +34,7 @@ class Day06 extends Day {
     }
 
     private Stream<String> formStream() {
-        String[] input = asString(DAY).split("\n\n");
+        String[] input = asString(YEAR, DAY).split("\n\n");
         return Arrays.stream(input);
     }
 

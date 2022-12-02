@@ -1,10 +1,12 @@
-package days;
+package _2020;
 
 public abstract class Day {
 
+    protected static int YEAR;
     protected static int DAY;
 
     Day(int dayNumber) {
+        YEAR = 2020;
         DAY = dayNumber;
     }
 

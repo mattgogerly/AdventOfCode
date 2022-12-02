@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ class Day09 extends Day {
 
     @Override
     public Object partOne() {
-        List<Long> input = asLongStream(9)
+        List<Long> input = asLongStream(YEAR, DAY)
                 .collect(Collectors.toList());
 
         Encoder encoder = new Encoder(input);
@@ -26,7 +26,7 @@ class Day09 extends Day {
 
     @Override
     public Object partTwo() {
-        List<Long> input = asLongStream(9)
+        List<Long> input = asLongStream(YEAR, DAY)
                 .collect(Collectors.toList());
 
         Encoder encoder = new Encoder(input);

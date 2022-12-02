@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -62,7 +62,7 @@ class Day07 extends Day {
     private static Map<String, Node> buildTree() {
         tree = new HashMap<>();
 
-        asStringStream(DAY).forEach(l -> {
+        asStringStream(YEAR, DAY).forEach(l -> {
             Matcher parentMatches = parentPattern.matcher(l);
             if (!parentMatches.matches()) {
                 throw new IllegalArgumentException("Parent input does not match required format");

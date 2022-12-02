@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ class Day10 extends Day {
 
     @Override
     public Object partOne() {
-        List<Integer> input = asIntegerStream(DAY)
+        List<Integer> input = asIntegerStream(YEAR, DAY)
                 .sorted()
                 .collect(Collectors.toList());
 
@@ -44,7 +44,7 @@ class Day10 extends Day {
 
     @Override
     public Object partTwo() {
-        List<Integer> input = asIntegerStream(DAY)
+        List<Integer> input = asIntegerStream(YEAR, DAY)
                 .sorted()
                 .collect(Collectors.toList());
 

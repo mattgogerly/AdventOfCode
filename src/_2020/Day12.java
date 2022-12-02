@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +19,7 @@ class Day12 extends Day {
 
     @Override
     public Object partOne() {
-        List<Instruction> input = asStringStream(DAY)
+        List<Instruction> input = asStringStream(YEAR, DAY)
                 .map(Instruction::new)
                 .collect(Collectors.toList());
 

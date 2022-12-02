@@ -1,4 +1,4 @@
-package days;
+package _2020;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -43,7 +43,7 @@ class Day04 extends Day {
 
     private Stream<Passport> passportStream() {
         // each entry is separated by a double newline
-        String[] input = asString(DAY).split("\n\n");
+        String[] input = asString(YEAR, DAY).split("\n\n");
 
         // map each String (line) to a Passport
         return Arrays.stream(input).map(Passport::new);

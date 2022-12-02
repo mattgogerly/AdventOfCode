@@ -1,2 +1,2 @@
-# Advent of Code 2020
-Solutions for [Advent of Code 2020](https://adventofcode.com) in Java.
+# Advent of Code _2020
+Solutions for [Advent of Code](https://adventofcode.com) in Java.
