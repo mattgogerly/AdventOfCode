@@ -25,10 +25,7 @@ class Day03 extends Day {
                             .chars()
                             .distinct()
                             .filter(c1 -> secondHalf.chars().anyMatch(c2 -> c2 == c1))
-                            .map(i -> {
-                                if (Character.isUpperCase(i)) return i - 'A' + 27;
-                                else return i - 'a' + 1;
-                            })
+                            .map(this::toPriority)
                             .findFirst();
                 })
                 .mapToInt(i -> i.orElseThrow(() -> new IllegalArgumentException("No values intersect!")))
@@ -46,14 +43,19 @@ class Day03 extends Day {
                     .distinct()
                     .filter(c1 -> input.get(finalI + 1).chars().anyMatch(c2 -> c2 == c1))
                     .filter(c2 -> input.get(finalI + 2).chars().anyMatch(c3 -> c3 == c2))
-                    .map(c -> {
-                        if (Character.isUpperCase(c)) return c - 'A' + 27;
-                        else return c - 'a' + 1;
-                    })
+                    .map(this::toPriority)
                     .findFirst()
                     .orElseThrow(() -> new IllegalArgumentException("No values intersect!"));
         }
 
         return sum;
+    }
+
+    int toPriority(int c) {
+        if (Character.isUpperCase(c)) {
+            return c - 'A' + 27;
+        } else {
+            return c - 'a' + 1;
+        }
     }
 }
