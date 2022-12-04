@@ -22,18 +22,18 @@ class Day04 extends Day {
     public Object partOne() {
         List<String> input = asStringStream(YEAR, DAY).toList();
 
-        int fullyOverlap = 0;
+        int anyOverlap = 0;
         for (String line : input) {
             String[] split = line.split(",");
-            int[] first = Arrays.stream(split[0].split("-")).mapToInt(Integer::valueOf).toArray();
-            int[] second = Arrays.stream(split[1].split("-")).mapToInt(Integer::valueOf).toArray();
+            Set<Integer> firstSet = getFirstSet(split);
+            Set<Integer> secondSet = getSecondSet(split);
 
-            if ((first[0] <= second[0] && first[1] >= second[1]) || (second[0] <= first[0] && second[1] >= first[1])) {
-                fullyOverlap++;
+            if (firstSet.containsAll(secondSet) || secondSet.containsAll(firstSet)) {
+                anyOverlap++;
             }
         }
 
-        return fullyOverlap;
+        return anyOverlap;
     }
 
     @Override
@@ -43,16 +43,26 @@ class Day04 extends Day {
         int anyOverlap = 0;
         for (String line : input) {
             String[] split = line.split(",");
-            int[] first = Arrays.stream(split[0].split("-")).mapToInt(Integer::valueOf).toArray();
-            int[] second = Arrays.stream(split[1].split("-")).mapToInt(Integer::valueOf).toArray();
+            Set<Integer> first = getFirstSet(split);
+            Set<Integer> second = getSecondSet(split);
 
-            // +1 since the input ranges are inclusive but the range method is not
-            Set<Integer> firstSet = IntStream.range(first[0], first[1] + 1).boxed().collect(Collectors.toSet());
-            if (IntStream.range(second[0], second[1] + 1).boxed().anyMatch(firstSet::contains)) {
+            if (first.stream().anyMatch(second::contains)) {
                 anyOverlap++;
             }
         }
 
         return anyOverlap;
+    }
+
+    private Set<Integer> getFirstSet(String[] split) {
+        int[] first = Arrays.stream(split[0].split("-")).mapToInt(Integer::valueOf).toArray();
+
+        // +1 since the input ranges are inclusive but the range method is not
+        return IntStream.range(first[0], first[1] + 1).boxed().collect(Collectors.toSet());
+    }
+
+    private Set<Integer> getSecondSet(String[] split) {
+        int[] second = Arrays.stream(split[1].split("-")).mapToInt(Integer::valueOf).toArray();
+        return IntStream.range(second[0], second[1] + 1).boxed().collect(Collectors.toSet());
     }
 }
